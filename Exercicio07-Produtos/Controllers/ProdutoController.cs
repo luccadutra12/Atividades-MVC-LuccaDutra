@@ -1,0 +1,5 @@
+using Microsoft.AspNetCore.Mvc; using Exercicio07_Produtos.Models;
+namespace Exercicio07_Produtos.Controllers;
+public class ProdutoController:Controller {
+static readonly List<Produto> produtos=new(){new(){Id=1,Nome="Notebook",Categoria="Informática",Estoque=8,Preco=3499.90m},new(){Id=2,Nome="Mouse",Categoria="Periféricos",Estoque=25,Preco=89.90m},new(){Id=3,Nome="Teclado",Categoria="Periféricos",Estoque=12,Preco=149.90m},new(){Id=4,Nome="Monitor",Categoria="Informática",Estoque=0,Preco=999.90m},new(){Id=5,Nome="Headset",Categoria="Áudio",Estoque=10,Preco=199.90m},new(){Id=6,Nome="Webcam",Categoria="Informática",Estoque=6,Preco=249.90m},new(){Id=7,Nome="SSD",Categoria="Informática",Estoque=15,Preco=399.90m},new(){Id=8,Nome="Cadeira",Categoria="Móveis",Estoque=3,Preco=799.90m},new(){Id=9,Nome="Microfone",Categoria="Áudio",Estoque=0,Preco=299.90m},new(){Id=10,Nome="Hub USB",Categoria="Periféricos",Estoque=20,Preco=79.90m}};
+public IActionResult Index()=>View(produtos); public IActionResult Disponiveis()=>View("Index",produtos.Where(p=>p.Estoque>0)); }

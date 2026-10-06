@@ -1,0 +1,5 @@
+using Microsoft.AspNetCore.Mvc; using Exercicio08_Biblioteca.Models;
+namespace Exercicio08_Biblioteca.Controllers;
+public class BibliotecaController:Controller {
+static readonly List<Livro> livros=new(){new(){Id=1,Titulo="O Pequeno Príncipe",Autor="Antoine de Saint-Exupéry",Ano=1943,Disponivel=true},new(){Id=2,Titulo="Dom Casmurro",Autor="Machado de Assis",Ano=1899,Disponivel=false},new(){Id=3,Titulo="1984",Autor="George Orwell",Ano=1949,Disponivel=true},new(){Id=4,Titulo="O Hobbit",Autor="J. R. R. Tolkien",Ano=1937,Disponivel=true},new(){Id=5,Titulo="Capitães da Areia",Autor="Jorge Amado",Ano=1937,Disponivel=false},new(){Id=6,Titulo="A Hora da Estrela",Autor="Clarice Lispector",Ano=1977,Disponivel=true},new(){Id=7,Titulo="Harry Potter",Autor="J. K. Rowling",Ano=1997,Disponivel=true},new(){Id=8,Titulo="Vidas Secas",Autor="Graciliano Ramos",Ano=1938,Disponivel=false},new(){Id=9,Titulo="O Alienista",Autor="Machado de Assis",Ano=1882,Disponivel=true},new(){Id=10,Titulo="Percy Jackson",Autor="Rick Riordan",Ano=2005,Disponivel=true}};
+public IActionResult Index()=>View(livros); public IActionResult Disponiveis()=>View("Index",livros.Where(l=>l.Disponivel)); }

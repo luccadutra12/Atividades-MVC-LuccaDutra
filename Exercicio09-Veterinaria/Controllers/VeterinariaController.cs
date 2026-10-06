@@ -1,0 +1,5 @@
+using Microsoft.AspNetCore.Mvc; using Exercicio09_Veterinaria.Models;
+namespace Exercicio09_Veterinaria.Controllers;
+public class VeterinariaController:Controller {
+static readonly List<Animal> animais=new(){new(){Id=1,Nome="Thor",Especie="Cachorro",Idade=4,Dono="Lucas"},new(){Id=2,Nome="Luna",Especie="Gato",Idade=2,Dono="Marina"},new(){Id=3,Nome="Mel",Especie="Cachorro",Idade=6,Dono="Ana"},new(){Id=4,Nome="Nina",Especie="Gato",Idade=3,Dono="Pedro"},new(){Id=5,Nome="Max",Especie="Cachorro",Idade=5,Dono="Carlos"},new(){Id=6,Nome="Mia",Especie="Gato",Idade=1,Dono="Julia"},new(){Id=7,Nome="Bob",Especie="Cachorro",Idade=8,Dono="Rafael"},new(){Id=8,Nome="Tom",Especie="Gato",Idade=4,Dono="Beatriz"}};
+public IActionResult Index()=>View(animais); public IActionResult Cachorros()=>View("Index",animais.Where(a=>a.Especie=="Cachorro")); public IActionResult Gatos()=>View("Index",animais.Where(a=>a.Especie=="Gato")); }

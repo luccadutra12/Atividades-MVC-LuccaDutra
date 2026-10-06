@@ -1,0 +1,4 @@
+@model IEnumerable<Exercicio06_Alunos.Models.Aluno>
+<h1>Cadastro de Alunos</h1>
+<table><tr><th>ID</th><th>Nome</th><th>Idade</th><th>Curso</th></tr>
+@foreach(var a in Model){<tr><td>@a.Id</td><td><a href="/Aluno/Detalhes?id=@a.Id">@a.Nome</a></td><td>@a.Idade</td><td>@a.Curso</td></tr>}</table>
